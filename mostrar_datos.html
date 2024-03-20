@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Datos del Formulario</title>
+    <!-- Enlace a archivo de estilos CSS -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Datos del Formulario</h2>
+        <div id="datos-formulario">
+            <!-- Aquí se mostrarán los datos del formulario -->
+        </div>
+    </div>
+
+    <script>
+        // Función para obtener los parámetros de la URL
+        function getParametroURL(nombre) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nombre);
+        }
+
+        // Obtener los datos del formulario de la URL y mostrarlos
+        document.addEventListener("DOMContentLoaded", function() {
+            const datosFormulario = document.getElementById("datos-formulario");
+            const companyName = getParametroURL("companyName");
+            const contactName = getParametroURL("contactName");
+            const email = getParametroURL("email");
+            const phone = getParametroURL("phone");
+            const category = getParametroURL("category");
+            const comments = getParametroURL("comments");
+
+            // Crear HTML para mostrar los datos
+            const contenidoHTML = `
+                <p><strong>Nombre de la Empresa:</strong> ${companyName}</p>
+                <p><strong>Nombre de Contacto:</strong> ${contactName}</p>
+                <p><strong>Correo Electrónico:</strong> ${email}</p>
+                <p><strong>Teléfono de Contacto:</strong> ${phone}</p>
+                <p><strong>Rubro:</strong> ${category}</p>
+                <p><strong>Comentarios:</strong> ${comments}</p>
+            `;
+
+            // Insertar contenido en el elemento datosFormulario
+            datosFormulario.innerHTML = contenidoHTML;
+        });
+    </script>
+</body>
+</html>
