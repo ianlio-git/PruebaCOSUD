@@ -77,10 +77,21 @@ body {
     font-weight: bold;
 }
 
-#filteredCategoriesContainer {
-    display: none; 
-    background-color: #00000035;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 5px;
+#filteredCategoriesContainer,
+#filteredSubCategoriesContainer {
+    position: absolute;
+    top: calc(100% + 5px);
+    display: none;
+    flex-direction: column;
+    background-color: #2993b9;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding-left: 5px;
+    position: fixed;
+    width: auto;
+    min-width: 150px;
 }

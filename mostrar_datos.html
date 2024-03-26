@@ -26,20 +26,26 @@
         document.addEventListener("DOMContentLoaded", function() {
             const datosFormulario = document.getElementById("datos-formulario");
             const companyName = getParametroURL("companyName");
+            const cuit = getParametroURL("cuit");
+            const enterprise = getParametroURL("enterprise");
             const contactName = getParametroURL("contactName");
             const email = getParametroURL("email");
             const phone = getParametroURL("phone");
             const category = getParametroURL("category");
-            const comments = getParametroURL("comments");
+            const subCategory = getParametroURL("subCategory");
+            const references = getParametroURL("references");
 
             // Crear HTML para mostrar los datos
             const contenidoHTML = `
-                <p><strong>Nombre de la Empresa:</strong> ${companyName}</p>
+                <p><strong>Razón Social:</strong> ${companyName}</p>
+                <p><strong>Cuit:</strong> ${cuit}</p>
+                <p><strong>Empresa:</strong> ${enterprise}</p>
                 <p><strong>Nombre de Contacto:</strong> ${contactName}</p>
                 <p><strong>Correo Electrónico:</strong> ${email}</p>
                 <p><strong>Teléfono de Contacto:</strong> ${phone}</p>
                 <p><strong>Rubro:</strong> ${category}</p>
-                <p><strong>Comentarios:</strong> ${comments}</p>
+                <p><strong>Sub-Rubro:</strong> ${subCategory}</p>
+                <p><strong>Referencias Comerciales:</strong> ${references}</p>
             `;
 
             // Insertar contenido en el elemento datosFormulario
